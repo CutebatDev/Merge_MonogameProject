@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Merge_MonogameProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ede34a9428c01cb0ca39eff858de1d2b4905543")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06e072ac642f548d18092e4e7ad4a3ad801ee0b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Merge_MonogameProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Merge_MonogameProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
