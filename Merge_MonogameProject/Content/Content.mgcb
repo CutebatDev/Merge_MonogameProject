@@ -12,4 +12,19 @@
 
 
 #---------------------------------- Content ---------------------------------#
+#begin Evolution_0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Evolution_0.png
+
+#begin Evolution_1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Evolution_1.png
+
+#begin Evolution_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Evolution_2.png
+
 
