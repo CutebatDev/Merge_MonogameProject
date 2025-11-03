@@ -14,6 +14,9 @@ public class Game1 : Game
     private SpriteManager _spriteManager;
     private static List<IDrawable> _drawables = new List<IDrawable>();
     private static List<IUpdateable> _updateables= new List<IUpdateable>();
+    Texture2D evo0;   // simple names for study
+	Texture2D evo1;
+	Texture2D evo2;
 
     public Game1()
     {
@@ -48,6 +51,11 @@ public class Game1 : Game
         // TODO: use this.Content to load your game content here
     }
 
+    // load by the name in mgcb (without .png)
+    evo0 = Content.Load<Texture2D>("Evolution_0");
+    evo1 = Content.Load<Texture2D>("Evolution_1");
+    evo2 = Content.Load<Texture2D>("Evolution_2");
+}
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||

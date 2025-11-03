@@ -42,3 +42,6 @@ success
 *.
 Merge_MonogameProject/obj/rider.project.model.nuget.info
 Merge_MonogameProject/obj/Debug/net8.0
+Merge_MonogameProject/obj/Debug/net8.0
+Merge_MonogameProject/obj/project.nuget.cache
+Merge_MonogameProject/obj/rider.project.model.nuget.info
