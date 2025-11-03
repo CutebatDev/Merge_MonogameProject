@@ -9,3 +9,4 @@ public class TransformComponent : Component
     public Vector2 Scale { get; set; } = Vector2.One;
 
 }
+

@@ -9,7 +9,6 @@ public abstract class Component
     public bool IsEnabled { get; set; } = true;
     
     public virtual void Initialize() { }
-    public virtual void Update(GameTime gameTime) { }
     public virtual void Destroy() { }
 
 }
