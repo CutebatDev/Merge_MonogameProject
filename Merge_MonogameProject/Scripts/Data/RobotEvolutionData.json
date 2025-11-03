@@ -1,0 +1,28 @@
+{
+  "tiers": [
+    {
+      "id": "bot_01",
+      "name": "Tin Calf",
+      "sprite": "Sprites/RobotEvolutions/bot_01",
+      "gearsPerTick": 1,
+      "tickSeconds": 3.0,
+      "nextId": "bot_02"
+    },
+    {
+      "id": "bot_02",
+      "name": "Gearling",
+      "sprite": "Sprites/RobotEvolutions/bot_02",
+      "gearsPerTick": 3,
+      "tickSeconds": 6,
+      "nextId": "bot_03"
+    },
+    {
+      "id": "bot_03",
+      "name": "Chromebull",
+      "sprite": "Sprites/RobotEvolutions/bot_03",
+      "gearsPerTick": 8,
+      "tickSeconds": 12,
+      "nextId": null
+    }
+  ]
+}
