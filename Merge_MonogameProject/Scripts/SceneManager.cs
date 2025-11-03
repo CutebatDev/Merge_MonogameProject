@@ -9,9 +9,7 @@ public class SceneManager
     
     private static List<IUpdateable>_updatables = new List<IUpdateable>();
     private static List<IDrawable> _drawables = new List<IDrawable>();
-    // TODO CHANGE TO GameObjects
-    
-    
+
     private static SceneManager _instance = null;
 
     public static SceneManager Instance
@@ -49,13 +47,13 @@ public class SceneManager
 
     public void Update(GameTime deltatime)
     {
-        foreach (var updateVar in _updatables)
-            updateVar.Update(deltatime);
+        for(int i = 0; i < _updatables.Count; i++)
+            _updatables[i].Update(deltatime);
     }
 
     public void Draw(SpriteBatch spriteBatch)
     {
-        foreach (var drawVar in _drawables)
-            drawVar.Draw(spriteBatch);
+        for(int i = 0; i < _drawables.Count; i++)
+            _drawables[i].Draw(spriteBatch);
     }
 }
