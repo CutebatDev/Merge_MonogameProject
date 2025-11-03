@@ -47,15 +47,13 @@ public class Game1 : Game
         _spriteManager = new SpriteManager(Content);
 
         // LOAD SPRITES HERE
+        // load by the name in mgcb (without .png)
+        evo0 = Content.Load<Texture2D>("Evolution_0");
+        evo1 = Content.Load<Texture2D>("Evolution_1");
+        evo2 = Content.Load<Texture2D>("Evolution_2");
         
         // TODO: use this.Content to load your game content here
     }
-
-    // load by the name in mgcb (without .png)
-    evo0 = Content.Load<Texture2D>("Evolution_0");
-    evo1 = Content.Load<Texture2D>("Evolution_1");
-    evo2 = Content.Load<Texture2D>("Evolution_2");
-}
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
