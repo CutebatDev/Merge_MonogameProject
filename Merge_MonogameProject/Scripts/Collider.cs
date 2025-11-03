@@ -10,11 +10,12 @@ public class Collider : Sprite
     public int thickness = 1;
     public Color color = Color.White;
     public bool isTrigger = false;
+    public bool Enabled = true;
     
     public delegate void EventDelegate(Object obj);
     public event EventDelegate OnCollision;
     public event EventDelegate OnTrigger;
-    public Collider() : base("pixel")
+    public Collider(string spriteName) : base(spriteName)
     {
         
     }
