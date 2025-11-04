@@ -8,54 +8,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6060805a-2199-4a8b-9d5b-a74209db6190" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/UiButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/CreateIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/CreateRobotButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/RobotSpawnManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Merge_MonogameProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Merge_MonogameProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/Content.mgcb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/.mgstats" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/.mgstats" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_0.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_0.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_1.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_1.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_2.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_2.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_4.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/Evolution_4.mgcontent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/.mgcontent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/.mgstats" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/.mgstats" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_0.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_0.mgcontent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_1.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_1.mgcontent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_2.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_2.mgcontent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_4.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Content/obj/DesktopGL/net8.0/Content/Evolution_4.mgcontent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Game1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Game1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/Collider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/Collider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/MergeObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/MergeObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/Sprite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/Sprite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/UiButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/Scripts/UiButton.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/bin/Release/net8.0/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/bin/Release/net8.0/Merge_MonogameProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/bin/Release/net8.0/Merge_MonogameProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/bin/Release/net8.0/Merge_MonogameProject.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/bin/Release/net8.0/Merge_MonogameProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/bin/Release/net8.0/Merge_MonogameProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/Merge_MonogameProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/ref/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/ref/Merge_MonogameProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/refint/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Debug/net8.0/refint/Merge_MonogameProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Merge_MonogameProject.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Merge_MonogameProject.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/Merge_MonogameProject.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/ref/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/ref/Merge_MonogameProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/refint/Merge_MonogameProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/Release/net8.0/refint/Merge_MonogameProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Merge_MonogameProject/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Merge_MonogameProject/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +63,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Project.Merge_MonogameProject.executor": "Debug",
+    ".NET Project.Merge_MonogameProject.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -130,7 +111,7 @@
       <updated>1762243869722</updated>
       <workItem from="1762243870949" duration="579000" />
       <workItem from="1762244476529" duration="2300000" />
-      <workItem from="1762247221068" duration="3398000" />
+      <workItem from="1762247221068" duration="6338000" />
     </task>
     <servers />
   </component>

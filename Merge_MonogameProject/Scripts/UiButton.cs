@@ -26,31 +26,28 @@ public class UiButton : Collider
             OnHover();
         else if (!DestRectangle.Contains(Mouse.GetState().Position) && _isHover)
             ResetButton();
-        
-        
-        
     }
 
 
-    private void OnHover()
+    public virtual void OnHover()
     {
         Debug.WriteLine("Hover");
         _isHover = true;
         color = Color.DarkGray;
     }
-    private void OnClick()
+    public virtual void OnClick()
     {
         Debug.WriteLine("Clicked");
         _isClicked = true;
         color = Color.Gray;
     }
-    private void OnRelease()
+    public virtual void OnRelease()
     {
         Debug.WriteLine("Released");
         ResetButton();
     }
 
-    private void ResetButton()
+    public virtual void ResetButton()
     {
         Debug.WriteLine("Reset");
         color = Color.White;

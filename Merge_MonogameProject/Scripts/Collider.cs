@@ -36,48 +36,6 @@ public class Collider : Sprite
   
     public override void Draw(SpriteBatch _spriteBatch)
     {
-         #if DEBUG
-        // Draw outline
-        // top
-        _spriteBatch.Draw(texture,
-            new Rectangle(
-                DestRectangle.X,
-                DestRectangle.Y,
-                DestRectangle.Width,
-                debugBorderThickness
-            ), 
-            debugBorderColor);
-        
-        // left
-        _spriteBatch.Draw(texture,
-            new Rectangle(
-                DestRectangle.X,
-                DestRectangle.Y,
-                debugBorderThickness,
-                DestRectangle.Height
-            ), 
-            debugBorderColor);
-        
-        // right
-        _spriteBatch.Draw(texture,
-            new Rectangle(
-                DestRectangle.X + DestRectangle.Width - debugBorderThickness,
-                DestRectangle.Y,
-                debugBorderThickness,
-                DestRectangle.Height
-            ), 
-            debugBorderColor);
-        
-        // bottom
-        _spriteBatch.Draw(texture,
-            new Rectangle(
-                DestRectangle.X,
-                DestRectangle.Y + DestRectangle.Height - debugBorderThickness,
-                DestRectangle.Width,
-                debugBorderThickness
-            ), 
-            debugBorderColor);
-        #endif
         base.Draw(_spriteBatch);
     }
 }

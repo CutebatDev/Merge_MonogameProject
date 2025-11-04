@@ -41,6 +41,10 @@ public class Game1 : Game
         var spriteManager = new SpriteManager(Content);
 
         SpriteManager.AddSprite("Evolution_0", "Evolution_0");
+        SpriteManager.AddSprite("Evolution_1", "Evolution_1");
+        SpriteManager.AddSprite("Evolution_2", "Evolution_2");
+        SpriteManager.AddSprite("Evolution_4", "Evolution_4");
+        SpriteManager.AddSprite("CreateIcon", "CreateIcon");
         
         // MergeObject mergeObject1 = SceneManager.Create<MergeObject>();
         // mergeObject1.SetSprite("Evolution_0");
@@ -52,10 +56,10 @@ public class Game1 : Game
         // mergeObject2.scale = new Vector2(0.15f, 0.15f);
         // mergeObject2.position = new Vector2(300, 100);
         
-        UiButton testButton = SceneManager.Create<UiButton>();
-        testButton.SetSprite("Evolution_0");
-        testButton.position = new Vector2(100, 100);
-        testButton.scale = new Vector2(0.15f, 0.05f);
+        CreateRobotButton spawnButton = SceneManager.Create<CreateRobotButton>();
+        spawnButton.SetSprite("CreateIcon");
+        spawnButton.scale = new Vector2(0.1f, 0.1f);
+        spawnButton.position = new Vector2(50, 50);;
         
 
     }

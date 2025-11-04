@@ -75,3 +75,4 @@ D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\refint\Merge_M
 D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\Merge_MonogameProject.pdb
 D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\Merge_MonogameProject.genruntimeconfig.cache
 D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\ref\Merge_MonogameProject.dll
+D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\CreateIcon.xnb
