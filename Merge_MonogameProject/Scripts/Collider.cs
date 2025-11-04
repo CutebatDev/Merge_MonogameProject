@@ -7,7 +7,7 @@ namespace Merge_MonogameProject;
 
 public class Collider : Sprite
 {
-    public int thickness = 1;
+    public int thickness = 0;
     public Color color = Color.White;
     public bool isTrigger = false;
     public bool Enabled = true;

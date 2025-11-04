@@ -4,10 +4,10 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/CS/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_0.png</File>
-    <File>D:/CS/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_1.png</File>
-    <File>D:/CS/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_2.png</File>
-    <File>D:/CS/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_4.png</File>
+    <File>C:/Users/nathk/OneDrive/Área de Trabalho/Tiltan/MonoGame/MongameSummer2025/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_0.png</File>
+    <File>C:/Users/nathk/OneDrive/Área de Trabalho/Tiltan/MonoGame/MongameSummer2025/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_1.png</File>
+    <File>C:/Users/nathk/OneDrive/Área de Trabalho/Tiltan/MonoGame/MongameSummer2025/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_2.png</File>
+    <File>C:/Users/nathk/OneDrive/Área de Trabalho/Tiltan/MonoGame/MongameSummer2025/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_4.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
