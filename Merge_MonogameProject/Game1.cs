@@ -42,15 +42,21 @@ public class Game1 : Game
 
         SpriteManager.AddSprite("Evolution_0", "Evolution_0");
         
-        MergeObject mergeObject1 = SceneManager.Create<MergeObject>();
-        mergeObject1.SetSprite("Evolution_0");
-        mergeObject1.scale = new Vector2(0.15f, 0.15f);
-        mergeObject1.position = new Vector2(100, 100);
+        // MergeObject mergeObject1 = SceneManager.Create<MergeObject>();
+        // mergeObject1.SetSprite("Evolution_0");
+        // mergeObject1.scale = new Vector2(0.15f, 0.15f);
+        // mergeObject1.position = new Vector2(100, 100);
+        //
+        // MergeObject mergeObject2 = SceneManager.Create<MergeObject>();
+        // mergeObject2.SetSprite("Evolution_0");
+        // mergeObject2.scale = new Vector2(0.15f, 0.15f);
+        // mergeObject2.position = new Vector2(300, 100);
         
-        MergeObject mergeObject2 = SceneManager.Create<MergeObject>();
-        mergeObject2.SetSprite("Evolution_0");
-        mergeObject2.scale = new Vector2(0.15f, 0.15f);
-        mergeObject2.position = new Vector2(300, 100);
+        UiButton testButton = SceneManager.Create<UiButton>();
+        testButton.SetSprite("Evolution_0");
+        testButton.position = new Vector2(100, 100);
+        testButton.scale = new Vector2(0.15f, 0.05f);
+        
 
     }
 

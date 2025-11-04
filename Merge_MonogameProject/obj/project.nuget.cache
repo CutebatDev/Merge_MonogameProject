@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tRu7zIVmrHQ=",
+  "dgSpecHash": "y74yCVh2X7c=",
   "success": true,
-  "projectFilePath": "D:\\CS\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
+  "projectFilePath": "D:\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\monogame.content.builder.task\\3.8.5-develop.12\\monogame.content.builder.task.3.8.5-develop.12.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.5-develop.12\\monogame.framework.desktopgl.3.8.5-develop.12.nupkg.sha512",

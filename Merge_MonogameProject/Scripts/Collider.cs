@@ -7,17 +7,17 @@ namespace Merge_MonogameProject;
 
 public class Collider : Sprite
 {
-    public int thickness = 1;
-    public Color color = Color.White;
+    public int debugBorderThickness = 1;
+    public Color debugBorderColor = Color.White;
     public bool isTrigger = false;
     public bool Enabled = true;
     
     public delegate void EventDelegate(Object obj);
     public event EventDelegate OnCollision;
     public event EventDelegate OnTrigger;
+
     public Collider()
     {
-        
     }
 
     public bool Intersects(Collider other)
@@ -44,39 +44,39 @@ public class Collider : Sprite
                 DestRectangle.X,
                 DestRectangle.Y,
                 DestRectangle.Width,
-                thickness
+                debugBorderThickness
             ), 
-            color);
+            debugBorderColor);
         
         // left
         _spriteBatch.Draw(texture,
             new Rectangle(
                 DestRectangle.X,
                 DestRectangle.Y,
-                thickness,
+                debugBorderThickness,
                 DestRectangle.Height
             ), 
-            color);
+            debugBorderColor);
         
         // right
         _spriteBatch.Draw(texture,
             new Rectangle(
-                DestRectangle.X + DestRectangle.Width - thickness,
+                DestRectangle.X + DestRectangle.Width - debugBorderThickness,
                 DestRectangle.Y,
-                thickness,
+                debugBorderThickness,
                 DestRectangle.Height
             ), 
-            color);
+            debugBorderColor);
         
         // bottom
         _spriteBatch.Draw(texture,
             new Rectangle(
                 DestRectangle.X,
-                DestRectangle.Y + DestRectangle.Height - thickness,
+                DestRectangle.Y + DestRectangle.Height - debugBorderThickness,
                 DestRectangle.Width,
-                thickness
+                debugBorderThickness
             ), 
-            color);
+            debugBorderColor);
         #endif
         base.Draw(_spriteBatch);
     }

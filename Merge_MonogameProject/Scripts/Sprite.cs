@@ -9,21 +9,21 @@ namespace Merge_MonogameProject;
 
 public class Sprite : IDrawable
 {
+    /// <summary>
+    /// Draw Parameters
+    /// </summary>
+    public Texture2D texture;
     public Vector2 position = Vector2.Zero;
+    protected Rectangle? sourceRectangle = null;
+    public Color color = Color.White;
     public float rotation = 0.0f;
+    public Vector2 origin;
     public Vector2 scale = Vector2.One;
+    public SpriteEffects effects = SpriteEffects.None;
     public float depthLayer = 0.0f;
     
-    public Texture2D texture;
-
-    public SpriteEffects effects = SpriteEffects.None;
-    
-    public Vector2 origin;
     
     protected Spritesheet _spritesheet;
-
-    protected Rectangle? sourceRectangle = null;
-
     public Rectangle DestRectangle;
     
     public Sprite()
@@ -64,7 +64,7 @@ public class Sprite : IDrawable
                 texture,
                 position,
                 sourceRectangle,
-                Color.White,
+                color,
                 MathHelper.ToRadians(rotation),
                 origin,
                 scale,

@@ -8,7 +8,7 @@ namespace Merge_MonogameProject;
 
 public class MergeObject : Collider, IUpdateable
 {
-    public int size = 0;
+    public int level = 0;
     
     static bool isLocked = false;
     static List<MergeObject> mergeObjects = new List<MergeObject>();
@@ -52,7 +52,7 @@ public class MergeObject : Collider, IUpdateable
         foreach (var other in mergeObjects)
         {
             if (other == this || !other.Enabled) continue;
-            if(DestRectangle.Intersects(other.DestRectangle) && !other.isDragging && !isDragging && size == other.size)
+            if(DestRectangle.Intersects(other.DestRectangle) && !other.isDragging && !isDragging && level == other.level)
                 collisions.Add(other);
         }
 
@@ -63,7 +63,7 @@ public class MergeObject : Collider, IUpdateable
     
     public void MergeTo(MergeObject other)
     {
-        size++;
+        level++;
         SceneManager.Remove(other);
         scale += Vector2.One * 0.1f;
     }
