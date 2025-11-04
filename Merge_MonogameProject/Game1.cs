@@ -10,7 +10,6 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
-    
     public static float ScreenCenterWidth;
     public static float ScreenCenterHeight;
     
@@ -27,10 +26,30 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        
-        ScreenCenterWidth = GraphicsDevice.Viewport.Width * 0.5f;
+        // Your existing center computations
+        ScreenCenterWidth  = GraphicsDevice.Viewport.Width  * 0.5f;
         ScreenCenterHeight = GraphicsDevice.Viewport.Height * 0.5f;
-        
+
+        // [ADDED] Set initial PulseMove bounds to match the current viewport
+        MergeObject.PulseMoveBounds = new Rectangle(
+            0, 0,
+            GraphicsDevice.Viewport.Width,
+            GraphicsDevice.Viewport.Height
+        );
+
+        // [ADDED] Keep bounds (and your screen-center helpers) in sync on window resize
+        Window.ClientSizeChanged += (_, __) =>
+        {
+            MergeObject.PulseMoveBounds = new Rectangle(
+                0, 0,
+                GraphicsDevice.Viewport.Width,
+                GraphicsDevice.Viewport.Height
+            );
+
+            ScreenCenterWidth  = GraphicsDevice.Viewport.Width  * 0.5f; // keep your helpers updated
+            ScreenCenterHeight = GraphicsDevice.Viewport.Height * 0.5f;
+        };
+
         base.Initialize();
     }
     
@@ -80,11 +99,9 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
         _spriteBatch.Begin();
 
-        
         SceneManager.Instance.Draw(_spriteBatch);
 
         _spriteBatch.End();
-        
         base.Draw(gameTime);
     }
 }
