@@ -73,3 +73,7 @@
 /processorParam:TextureFormat=Color
 /build:Evolution_4.png
 
+#begin Scenario.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/build:Scenario.png
