@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Diagnostics;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -8,40 +9,58 @@ public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
-    Texture2D evo0;   // simple names for study
-Texture2D evo1;
-Texture2D evo2;
 
+    
+    public static float ScreenCenterWidth;
+    public static float ScreenCenterHeight;
+    
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
+        
+        _graphics.IsFullScreen = false;
+        _graphics.PreferredBackBufferWidth = 800;
+        _graphics.PreferredBackBufferHeight = 600;
     }
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
+        
+        ScreenCenterWidth = GraphicsDevice.Viewport.Width * 0.5f;
+        ScreenCenterHeight = GraphicsDevice.Viewport.Height * 0.5f;
+        
         base.Initialize();
     }
-
+    
     protected override void LoadContent()
-{
-    _spriteBatch = new SpriteBatch(GraphicsDevice);
+    {
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-    // load by the name in mgcb (without .png)
-    evo0 = Content.Load<Texture2D>("Evolution_0");
-    evo1 = Content.Load<Texture2D>("Evolution_1");
-    evo2 = Content.Load<Texture2D>("Evolution_2");
-}
+        var spriteManager = new SpriteManager(Content);
+
+        SpriteManager.AddSprite("Evolution_0", "Evolution_0");
+        
+        MergeObject mergeObject1 = SceneManager.Create<MergeObject>();
+        mergeObject1.SetSprite("Evolution_0");
+        mergeObject1.scale = new Vector2(0.15f, 0.15f);
+        mergeObject1.position = new Vector2(100, 100);
+        
+        MergeObject mergeObject2 = SceneManager.Create<MergeObject>();
+        mergeObject2.SetSprite("Evolution_0");
+        mergeObject2.scale = new Vector2(0.15f, 0.15f);
+        mergeObject2.position = new Vector2(300, 100);
+
+    }
+
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
             Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
 
-        // TODO: Add your update logic here
+        SceneManager.Instance.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -49,9 +68,13 @@ Texture2D evo2;
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
+        _spriteBatch.Begin();
 
-        // TODO: Add your drawing code here
+        
+        SceneManager.Instance.Draw(_spriteBatch);
 
+        _spriteBatch.End();
+        
         base.Draw(gameTime);
     }
 }

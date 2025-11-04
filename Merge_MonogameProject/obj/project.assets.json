@@ -2,18 +2,18 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "MonoGame.Content.Builder.Task/3.8.4.1": {
+      "MonoGame.Content.Builder.Task/3.8.5-develop.12": {
         "type": "package",
         "build": {
           "build/MonoGame.Content.Builder.Task.props": {},
           "build/MonoGame.Content.Builder.Task.targets": {}
         }
       },
-      "MonoGame.Framework.DesktopGL/3.8.4.1": {
+      "MonoGame.Framework.DesktopGL/3.8.5-develop.12": {
         "type": "package",
         "dependencies": {
           "MonoGame.Library.OpenAL": "1.24.3.2",
-          "MonoGame.Library.SDL": "2.32.2.1",
+          "MonoGame.Library.SDL": "2.32.10.1",
           "NVorbis": "0.10.4"
         },
         "compile": {
@@ -79,9 +79,13 @@
           }
         }
       },
-      "MonoGame.Library.SDL/2.32.2.1": {
+      "MonoGame.Library.SDL/2.32.10.1": {
         "type": "package",
         "runtimeTargets": {
+          "runtimes/linux-arm64/native/libSDL2-2.0.so.0": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
           "runtimes/linux-x64/native/libSDL2-2.0.so.0": {
             "assetType": "native",
             "rid": "linux-x64"
@@ -134,24 +138,24 @@
     }
   },
   "libraries": {
-    "MonoGame.Content.Builder.Task/3.8.4.1": {
-      "sha512": "jf6IZXMiOhuybRaWQt//u+804yzMRGk3ZRvlBJG/0iusRwTunJsQvA6tMMJJc7gjUrY6rUkzRqwinKWXugyHfA==",
+    "MonoGame.Content.Builder.Task/3.8.5-develop.12": {
+      "sha512": "kSf4PkzFEMBQjtkzj94nvIGCaaNVSXEp+Av5koTE5ZYtMnexDA/CvUpmDSkBKJhslclCUJUgoFpFuLEwLBqLnw==",
       "type": "package",
-      "path": "monogame.content.builder.task/3.8.4.1",
+      "path": "monogame.content.builder.task/3.8.5-develop.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "build/MonoGame.Content.Builder.Task.props",
         "build/MonoGame.Content.Builder.Task.targets",
-        "monogame.content.builder.task.3.8.4.1.nupkg.sha512",
+        "monogame.content.builder.task.3.8.5-develop.12.nupkg.sha512",
         "monogame.content.builder.task.nuspec"
       ]
     },
-    "MonoGame.Framework.DesktopGL/3.8.4.1": {
-      "sha512": "YybxIIT5+Ky78E/XdkS0glyluMr2EeDZwx2LqXULAOCqiKt1+aDrjPZaqLL5qpNgBcMEHUeZJ4YjWe4TAZlWLw==",
+    "MonoGame.Framework.DesktopGL/3.8.5-develop.12": {
+      "sha512": "EjXtnmneIKmD3dW3JUvTM6hyZwHseLeNkL/4Uvn4A6yJXux+JVKvdr0QoV75g3m34GF7jrAg9b6pi8zMSS+H4Q==",
       "type": "package",
-      "path": "monogame.framework.desktopgl/3.8.4.1",
+      "path": "monogame.framework.desktopgl/3.8.5-develop.12",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -160,7 +164,7 @@
         "build/MonoGame.Framework.DesktopGL.targets",
         "lib/net8.0/MonoGame.Framework.dll",
         "lib/net8.0/MonoGame.Framework.xml",
-        "monogame.framework.desktopgl.3.8.4.1.nupkg.sha512",
+        "monogame.framework.desktopgl.3.8.5-develop.12.nupkg.sha512",
         "monogame.framework.desktopgl.nuspec"
       ]
     },
@@ -189,18 +193,19 @@
         "runtimes/win-x64/native/openal.dll"
       ]
     },
-    "MonoGame.Library.SDL/2.32.2.1": {
-      "sha512": "T4E2ppGlSTC2L9US1rxtdg3qTbarRzNId31xZoumUW9cf9Nq8nRQPMu9GzvZGrhfSySf0+UWPEj1rlicps+P/w==",
+    "MonoGame.Library.SDL/2.32.10.1": {
+      "sha512": "mklIUC50O8y2zQ+BcT7tmnBrVT8ZQuHiODW3LxGWJ5UZIZM0PaePJfGuzZB9bSbdP3WvV+RtyvTfnMY7wz0f0w==",
       "type": "package",
-      "path": "monogame.library.sdl/2.32.2.1",
+      "path": "monogame.library.sdl/2.32.10.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.txt",
         "README.md",
-        "monogame.library.sdl.2.32.2.1.nupkg.sha512",
+        "monogame.library.sdl.2.32.10.1.nupkg.sha512",
         "monogame.library.sdl.nuspec",
+        "runtimes/linux-arm64/native/libSDL2-2.0.so.0",
         "runtimes/linux-x64/native/libSDL2-2.0.so.0",
         "runtimes/osx/native/libSDL2-2.0.0.dylib",
         "runtimes/win-x64/native/SDL2.dll"
@@ -290,34 +295,36 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "MonoGame.Content.Builder.Task >= 3.8.*",
-      "MonoGame.Framework.DesktopGL >= 3.8.*"
+      "MonoGame.Content.Builder.Task >= 3.8.5-develop.12",
+      "MonoGame.Framework.DesktopGL >= 3.8.5-develop.12"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nathk\\.nuget\\packages\\": {},
+    "C:\\Users\\alexa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\nathk\\OneDrive\\Área de Trabalho\\Tiltan\\MonoGame\\MongameSummer2025\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
+      "projectUniqueName": "D:\\CS\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
       "projectName": "Merge_MonogameProject",
-      "projectPath": "c:\\Users\\nathk\\OneDrive\\Área de Trabalho\\Tiltan\\MonoGame\\MongameSummer2025\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
-      "packagesPath": "C:\\Users\\nathk\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\nathk\\OneDrive\\Área de Trabalho\\Tiltan\\MonoGame\\MongameSummer2025\\Merge_MonogameProject\\Merge_MonogameProject\\obj\\",
+      "projectPath": "D:\\CS\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
+      "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
+      "outputPath": "D:\\CS\\Merge_MonogameProject\\Merge_MonogameProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nathk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -344,11 +351,11 @@
         "dependencies": {
           "MonoGame.Content.Builder.Task": {
             "target": "Package",
-            "version": "[3.8.*, )"
+            "version": "[3.8.5-develop.12, )"
           },
           "MonoGame.Framework.DesktopGL": {
             "target": "Package",
-            "version": "[3.8.*, )"
+            "version": "[3.8.5-develop.12, )"
           }
         },
         "imports": [
@@ -362,30 +369,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

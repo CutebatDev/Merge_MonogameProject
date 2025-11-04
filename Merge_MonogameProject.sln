@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merge_MonogameProject", "Merge_MonogameProject\Merge_MonogameProject.csproj", "{6D689C79-1925-40BD-94C8-F07413C95E16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merge_MonogameProject", "Merge_MonogameProject\Merge_MonogameProject.csproj", "{4CF21537-3D9B-4693-AB94-D5EFC23D1749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6D689C79-1925-40BD-94C8-F07413C95E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D689C79-1925-40BD-94C8-F07413C95E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D689C79-1925-40BD-94C8-F07413C95E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D689C79-1925-40BD-94C8-F07413C95E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF21537-3D9B-4693-AB94-D5EFC23D1749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF21537-3D9B-4693-AB94-D5EFC23D1749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF21537-3D9B-4693-AB94-D5EFC23D1749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF21537-3D9B-4693-AB94-D5EFC23D1749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
