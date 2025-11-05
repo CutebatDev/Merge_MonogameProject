@@ -9,6 +9,10 @@ namespace Merge_MonogameProject;
 public class Game1 : Game
 {
     private GraphicsDeviceManager _graphics;
+
+    private GearCounterUI _gearUI;
+
+    private int _gears = 0;
     private SpriteBatch _spriteBatch;
 
     private Sprite _backgroundSprite;   // [FIX] keep a handle to rescale on resize
@@ -86,6 +90,12 @@ private Texture2D _bgTex;             // raw texture for size/scale math (loaded
         spawnButton.SetSprite("CreateIcon");
         spawnButton.scale = new Vector2(0.1f, 0.1f);
         spawnButton.position = new Vector2(50, 50);
+
+
+_gearUI = new GearCounterUI(new Vector2(20, 20)); // top-left corner
+_gearUI.Load(Content);
+_gearUI.SetTotal(_gears);
+
     }
 
     protected override void Update(GameTime gameTime)
@@ -110,6 +120,11 @@ private Texture2D _bgTex;             // raw texture for size/scale math (loaded
         _spriteBatch.End();
 
         base.Draw(gameTime);
+
+        _spriteBatch.Begin();
+_gearUI.Draw(_spriteBatch);
+_spriteBatch.End();
+
     }
 
     // ================= helpers =================
