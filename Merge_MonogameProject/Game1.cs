@@ -53,6 +53,7 @@ public class Game1 : Game
         base.Initialize();
     }
     
+    
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -64,22 +65,19 @@ public class Game1 : Game
         SpriteManager.AddSprite("Evolution_2", "Evolution_2");
         SpriteManager.AddSprite("Evolution_4", "Evolution_4");
         SpriteManager.AddSprite("CreateIcon", "CreateIcon");
+        SpriteFont font = Content.Load<SpriteFont>("Fonts/OpenSans");
         
-        // MergeObject mergeObject1 = SceneManager.Create<MergeObject>();
-        // mergeObject1.SetSprite("Evolution_0");
-        // mergeObject1.scale = new Vector2(0.15f, 0.15f);
-        // mergeObject1.position = new Vector2(100, 100);
-        //
-        // MergeObject mergeObject2 = SceneManager.Create<MergeObject>();
-        // mergeObject2.SetSprite("Evolution_0");
-        // mergeObject2.scale = new Vector2(0.15f, 0.15f);
-        // mergeObject2.position = new Vector2(300, 100);
         
         CreateRobotButton spawnButton = SceneManager.Create<CreateRobotButton>();
         spawnButton.SetSprite("CreateIcon");
         spawnButton.scale = new Vector2(0.1f, 0.1f);
-        spawnButton.position = new Vector2(50, 50);;
+        spawnButton.position = new Vector2(50, 50);
         
+        StringSprite title = SceneManager.Create<StringSprite>();
+        title.spriteFont = font;
+        title.text = "Merge";
+        title.origin = title.spriteFont.MeasureString(title.text) / 2;
+        title.position = new Vector2(ScreenCenterWidth, 100);
 
     }
 

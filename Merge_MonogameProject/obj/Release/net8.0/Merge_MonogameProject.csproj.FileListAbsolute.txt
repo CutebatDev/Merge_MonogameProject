@@ -76,3 +76,4 @@ D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\Merge_Monogame
 D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\Merge_MonogameProject.genruntimeconfig.cache
 D:\Merge_MonogameProject\Merge_MonogameProject\obj\Release\net8.0\ref\Merge_MonogameProject.dll
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\CreateIcon.xnb
+D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Fonts\OpenSans.xnb

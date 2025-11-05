@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>D:/Merge_MonogameProject/Merge_MonogameProject/Content/Fonts/OpenSans.spritefont</SourceFile>
+  <SourceTime>2025-11-05T11:11:43.0302339+02:00</SourceTime>
+  <DestFile>D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Fonts/OpenSans.xnb</DestFile>
+  <DestTime>2025-11-05T11:21:48.6813823+02:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2025-06-02T13:31:02+03:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2025-06-02T13:31:02+03:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
