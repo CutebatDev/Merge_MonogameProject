@@ -52,8 +52,30 @@ public override void Update(GameTime gameTime)
     base.Update(gameTime);
     if (!Enabled) return;
 
-    // ----- drag logic (your code) -----
-    // ... (unchanged)
+if (!isLocked                    // nobody else is dragging (global mutex)
+            && !isDragging
+            && Mouse.GetState().LeftButton == ButtonState.Pressed  // the mouse is down now
+            && DestRectangle.Contains(Mouse.GetState().Position))  // cursor is inside me (hit test via my AABB)
+        {
+            // START DRAG:
+            // I enter dragging mode and also set the global lock so no other piece can be grabbed mid-drag.
+            isDragging = true;
+            isLocked = true;
+
+            // UX mental model: as soon as player clicks the piece, it "snaps" to the hand.
+        }
+        // release anywhere on mouse-up
+        if (isDragging && Mouse.GetState().LeftButton == ButtonState.Released)
+        {
+            isDragging = false;   // stop following the cursor
+            isLocked = false;   // free the global mutex so other pieces can be grabbed
+                                // (optional) snap/settle logic here
+        }
+
+        else if (isDragging)
+        {
+            position = Mouse.GetState().Position.ToVector2();
+        }    // ... (unchanged)
 
     // ----- merge scan (your code) -----
     List<MergeObject> collisions = CheckCollisions();
