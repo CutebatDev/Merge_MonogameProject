@@ -117,3 +117,4 @@ C:\Users\nathk\OneDrive\Área de Trabalho\Tiltan\MonoGame\MongameSummer2025\Merg
 C:\Users\nathk\OneDrive\Área de Trabalho\Tiltan\MonoGame\MongameSummer2025\Merge_MonogameProject\Merge_MonogameProject\obj\Debug\net8.0\ref\Merge_MonogameProject.dll
 C:\Users\nathk\OneDrive\Área de Trabalho\Tiltan\MonoGame\MongameSummer2025\Merge_MonogameProject\Merge_MonogameProject\bin\Debug\net8.0\Content\Scenario.xnb
 C:\Users\nathk\OneDrive\Área de Trabalho\Tiltan\MonoGame\MongameSummer2025\Merge_MonogameProject\Merge_MonogameProject\bin\Debug\net8.0\Content\UIFont.xnb
+C:\Users\nathk\OneDrive\Área de Trabalho\Tiltan\MonoGame\MongameSummer2025\Merge_MonogameProject\Merge_MonogameProject\bin\Debug\net8.0\Content\Robots.json

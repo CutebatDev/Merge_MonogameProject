@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -12,13 +13,33 @@ namespace Merge_MonogameProject;
 public class MergeObject : Collider, IUpdateable
 {
     // current evolution tier for this piece
-    public int level = 0;                  
+    public int level = 0;
+    private static MouseState _prevMouse;
+
+    private Vector2 _baseScale;     // scale to return to after the pop
+private float   _popTime = 0f;  // seconds remaining in the pop
+private float   _popDur  = 0.12f; // total pop duration
+    private float _popAmp = 0.08f; // pop strength (e.g., +8% at peak)
+// Call this to trigger a pop that goes up then back to base
+private void TriggerPop(float amp = 0.08f, float dur = 0.12f)
+{
+    // If a pop is NOT already running, capture the true baseline.
+    if (_popTime <= 0f)
+        _baseScale = scale;
+
+    _popAmp  = amp;
+    _popDur  = dur;
+    _popTime = dur; // (re)start timer without changing baseline mid-pop
+}
+
+
 
     static bool isLocked = false; // if true => someone is dragging. prevents two objects from being picked up at once
     static List<MergeObject> mergeObjects = new List<MergeObject>(); // registry of all live pieces for collision checks
 
     public bool isDragging { get; set; } = false; // whether THIS robot is currently in the user's mouse grip
 
+    public RobotTag robotTag { get; set; }
     // CONSTRUCTOR
     public MergeObject()
     {
@@ -26,41 +47,50 @@ public class MergeObject : Collider, IUpdateable
     }
 
     // Core heartbeat: called once per frame by the Game loop
-    public override void Update(GameTime gameTime)
-    {
-        // Let the parent Collider do its own refresh first 
-        base.Update(gameTime);
+public override void Update(GameTime gameTime)
+{
+    base.Update(gameTime);
+    if (!Enabled) return;
 
-        if (!Enabled) return;
+    // ----- drag logic (your code) -----
+    // ... (unchanged)
 
-        // --- INPUT & DRAG LOGIC --------------------------------------------------------------
-        // IMPORTANT: I'm using "stateful hold" logic (Pressed vs Released) without edge detection across frames
-        // release anywhere ends drag. Later I can switch to "edge-based" input (pressed this frame vs previous) if I need debouncing.
+    // ----- merge scan (your code) -----
+    List<MergeObject> collisions = CheckCollisions();
+    if (collisions != null)
+        MergeTo(collisions[0]);
 
-        if (!isLocked                    // nobody else is dragging (global mutex)
-            && !isDragging               
-            && Mouse.GetState().LeftButton == ButtonState.Pressed  // the mouse is down now
-            && DestRectangle.Contains(Mouse.GetState().Position))  // cursor is inside me (hit test via my AABB)
-        {
-            // START DRAG:
-            // I enter dragging mode and also set the global lock so no other piece can be grabbed mid-drag.
-            isDragging = true;
-            isLocked = true;
+    // ----- CLICK REWARD (Right Mouse Button) -----
+MouseState cur = Mouse.GetState();
+bool rightJustPressed = (cur.RightButton == ButtonState.Pressed &&
+_prevMouse.RightButton == ButtonState.Released);
 
-            // UX mental model: as soon as player clicks the piece, it "snaps" to the hand.
-        }
-        else if (isDragging)
-        {
-            position = Mouse.GetState().Position.ToVector2();
-        }
+if (rightJustPressed && DestRectangle.Contains(cur.Position))
+{
+    int lvl = (robotTag != null) ? robotTag.Level : level;
+    EconomyManager.Instance.AwardClick(lvl);
 
-        // After any potential movement, scan for neighbors to merge with.
-        //  merge only with one (the first found), only equal-level, rectangles must overlap, and neither is being dragged
-        List<MergeObject> collisions = CheckCollisions();
-        if (collisions != null)
-            MergeTo(collisions[0]); // NOTE: order in the list is arbitrary. If multiple overlaps, we just take the first.
-                                    // If I need "closest" feel, compute min distance to centers instead of index 0
-    }
+    // trigger a tiny pop (up then down)
+    TriggerPop(0.08f, 0.12f);
+}
+
+// ----- POP ANIMATION (ease up-and-back with sine) -----
+float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+if (_popTime > 0f)
+{
+    _popTime -= dt;
+    float u = 1f - (_popTime / _popDur);       // 0 -> 1 over the pop
+    float eased = MathF.Sin(u * MathF.PI);     
+    float s = 1f + _popAmp * eased;            // scale factor
+    scale = _baseScale * s;
+
+    if (_popTime <= 0f)
+        scale = _baseScale;                    // restore exact original
+}
+
+    _prevMouse = cur; // store for next frame
+}
+
 
     public List<MergeObject> CheckCollisions()
     {
@@ -91,13 +121,40 @@ public class MergeObject : Collider, IUpdateable
     //  - SceneManager.Remove(other) MUST also ensure 'other' is not left inside mergeObjects
     public void MergeTo(MergeObject other)
     {
-        level++;                                // promote me to next tier (gameplay effect)
+        // 1) Guards: both must exist, not dragging, same level, and have tags
+        if (other == null || robotTag == null || other.robotTag == null) return;
+        if (isDragging || other.isDragging) return;
+        if (level != other.level) return;
 
-        SceneManager.Remove(other);             // consume the other. Assumption: fully removes from update/registry/render.
-                                                // If I later observe null refs during iteration or false positives, revisit the registry cleanup.
+        int current = level;                      // same as robotTag.Level right now
+        int next = RobotEvolutions.NextLevel(current);
 
-        scale += Vector2.One * 0.1f;            // tiny grow to "telegraph" success (no tween yet; pure step).
-                                                // Future: replace with a short tween + particle burst + SFX "clink".
-                                                // Also swap my sprite/art here based on 'level' when I wire that data (SpriteSheet or Atlas).
+        // 2) If there is no next evolution defined, do nothing (or just pop FX)
+        var nextEvo = RobotEvolutions.Get(next);
+        if (nextEvo == null) return;
+
+        // 3) ECONOMY: remove both parents from counts
+        robotTag.Dispose();
+        other.robotTag.Dispose();
+
+        // 4) VISUAL/EFFECT: upgrade THIS piece into the child
+        level = next;                                      // keep local in sync
+        robotTag = new RobotTag(next);                     // economy counts the child
+        SetSprite(nextEvo.spriteName);                     // swap art to next evo
+        scale += Vector2.One * 0.1f;                       // your “pop” feedback
+
+        // Place at midpoint (optional; you already position via drag)
+        position = new Vector2(
+            (this.position.X + other.position.X) * 0.5f,
+            (this.position.Y + other.position.Y) * 0.5f
+        );
+
+        // 5) Remove the other piece from scene and our registry
+        SceneManager.Remove(other);
+        mergeObjects.Remove(other);                        // ensure it leaves the local list too
     }
+
+
+
+
 }

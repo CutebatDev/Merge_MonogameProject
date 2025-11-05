@@ -6,5 +6,6 @@ public class CreateRobotButton : UiButton
     {
         base.OnClick();
         RobotSpawnManager.SpawnRobot();
+        
     }
 }
