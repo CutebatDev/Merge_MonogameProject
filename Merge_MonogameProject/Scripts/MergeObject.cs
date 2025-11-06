@@ -37,6 +37,7 @@ public class MergeObject : Collider, IUpdateable
 
     // [ADDED] Puff scale support (triangle curve around a base scale)
     private Vector2 _baseScale;
+    private bool _baseScaleInitialized = false;
     private const float PuffPeak = 1.2f;     // peak scale factor at t=0.5
 
     // CONSTRUCTOR
@@ -44,133 +45,120 @@ public class MergeObject : Collider, IUpdateable
     {
         mergeObjects.Add(this);
 
-        // [ADDED] Randomize initial phase so not all hop together
+        // Randomize initial phase so not all hop together
         _timeUntilNextPulse = (float)(_rng.NextDouble() * PulseMoveInterval);
 
-        // [ADDED] Capture base scale for clean puffing (merge grows will update this too)
-        _baseScale = scale;
     }
 
-    public override void Update(GameTime gameTime)
+public override void Update(GameTime gameTime)
+{
+    // Lazy-init the remembered scale only after scene has assigned a real one.
+    if (!_baseScaleInitialized && scale != Vector2.One)
     {
-        base.Update(gameTime); // keep as-is (drag hit-tests use DestRectangle)
-
-        if (!Enabled) return;
-
-        // ---------------------------
-        // DRAG INPUT (unchanged flow)
-        // ---------------------------
-        if (!isLocked && !isDragging && Mouse.GetState().LeftButton == ButtonState.Pressed &&
-            DestRectangle.Contains(Mouse.GetState().Position))
-        {
-            isDragging = true;
-            isLocked = true;
-            // [ADDED] If we start dragging mid-hop, pause/clean the pulse immediately
-            _pulseTweenActive = false;
-            _pulseTweenElapsed = 0f;
-            scale = _baseScale;
-        }
-        else if (isDragging && Mouse.GetState().LeftButton == ButtonState.Released)
-        {
-            isDragging = false;
-            isLocked = false;
-
-            // [ADDED] On release, restart the interval cleanly (no instant hop surprise)
-            _pulseTweenActive = false;
-            _pulseTweenElapsed = 0f;
-            scale = _baseScale;
-            _timeUntilNextPulse = PulseMoveInterval;
-        }
-        else if (isDragging)
-        {
-// NEW — keep the robot’s CENTER inside the view, accounting for origin & scale
-position = ClampToRect(Mouse.GetState().Position.ToVector2(), PulseMoveBounds);
-            // [ADDED] While dragging, do NOT advance pulsemove timers/tween
-        }
-
-        // --------------------------------
-        // [ADDED] PulseMove (linear hop)
-        // --------------------------------
-        if (PulseMoveEnabled && !isDragging)
-        {
-            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (_pulseTweenActive)
-            {
-                // advance tween
-                _pulseTweenElapsed += dt;
-                float t = _pulseTweenElapsed / PulseTweenDuration;
-                if (t > 1f) t = 1f;
-
-                // linear position (no easing)
-                position = Vector2.Lerp(_startPos, _targetPos, t);
-
-                // triangle puff 1.0 -> 1.2 -> 1.0
-                float puff;
-                if (t < 0.5f)
-                {
-                    float k = t / 0.5f;           // 0..1
-                    puff = 1.0f + (PuffPeak - 1.0f) * k;
-                }
-                else
-                {
-                    float k = (1.0f - t) / 0.5f;  // 1..0
-                    puff = 1.0f + (PuffPeak - 1.0f) * k;
-                }
-                scale = _baseScale * puff;
-
-                // finish
-                if (_pulseTweenElapsed >= PulseTweenDuration)
-                {
-                    position = _targetPos;
-                    scale = _baseScale;
-                    _pulseTweenActive = false;
-                    _pulseTweenElapsed = 0f;
-                    _timeUntilNextPulse = PulseMoveInterval;
-                }
-            }
-            else
-            {
-                // idle waiting
-                _timeUntilNextPulse -= dt;
-                if (_timeUntilNextPulse <= 0f)
-                {
-                    // random offset uniformly in disk (sqrt for area-uniform radius)
-                    float angle = (float)(_rng.NextDouble() * MathHelper.TwoPi);
-                    float r = (float)System.Math.Sqrt(_rng.NextDouble()) * PulseMoveRadius;
-                    Vector2 offset = new Vector2((float)System.Math.Cos(angle), (float)System.Math.Sin(angle)) * r;
-
-                    // candidate target
-                    Vector2 candidate = position + offset;
-
-                    // clamp to FOV so robots never leave screen
-                    candidate = ClampToRect(candidate, PulseMoveBounds);
-
-                    // decide facing from FINAL delta (what the player actually sees)
-                    float dx = candidate.X - position.X;
-                    if (dx > 0f) effects = SpriteEffects.FlipHorizontally; // art faces left; flip when going right
-                    else if (dx < 0f) effects = SpriteEffects.None;        // keep facing left
-
-                    // start tween
-                    _startPos = position;
-                    _targetPos = candidate;
-                    _pulseTweenElapsed = 0f;
-                    _pulseTweenActive = true;
-                }
-            }
-        }
-
-        // ---------------------------
-        // MERGE CHECK (unchanged)
-        // ---------------------------
-        List<MergeObject> collisions = CheckCollisions();
-        if(collisions != null)
-            MergeTo(collisions[0]);
-
-        // [ADDED] After PulseMove may have changed position/scale,
-        // update rectangles once more so hit-tests match this frame.
-        base.Update(gameTime);
+        _baseScale = scale;
+        _baseScaleInitialized = true;
     }
+
+    if (!Enabled)
+    {
+        base.Update(gameTime);   // single call on this early return path
+        return;
+    }
+
+    // Helper local to avoid touching an uninitialized base
+    Vector2 baseS = _baseScaleInitialized ? _baseScale : scale;
+
+    // ---------------------------
+    // DRAG INPUT
+    // ---------------------------
+    var mouse = Mouse.GetState();
+    if (!isLocked && !isDragging && mouse.LeftButton == ButtonState.Pressed &&
+        DestRectangle.Contains(mouse.Position))
+    {
+        isDragging = true;
+        isLocked = true;
+        _pulseTweenActive = false;
+        _pulseTweenElapsed = 0f;
+        scale = baseS;                   // safe use
+    }
+    else if (isDragging && mouse.LeftButton == ButtonState.Released)
+    {
+        isDragging = false;
+        isLocked = false;
+        _pulseTweenActive = false;
+        _pulseTweenElapsed = 0f;
+        scale = baseS;                   // safe use
+        _timeUntilNextPulse = PulseMoveInterval;
+    }
+    else if (isDragging)
+    {
+        position = ClampToRect(mouse.Position.ToVector2(), PulseMoveBounds);
+        // while dragging, do not advance pulsemove timers
+    }
+
+    // ---------------------------
+    // PULSE MOVE
+    // ---------------------------
+    if (PulseMoveEnabled && !isDragging)
+    {
+        float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+        if (_pulseTweenActive)
+        {
+            _pulseTweenElapsed += dt;
+            float t = _pulseTweenElapsed / PulseTweenDuration;
+            if (t > 1f) t = 1f;
+
+            position = Vector2.Lerp(_startPos, _targetPos, t);
+
+            // triangle puff 1.0 -> PuffPeak -> 1.0
+            float k = (t < 0.5f) ? (t / 0.5f) : ((1f - t) / 0.5f);
+            float puff = 1.0f + (PuffPeak - 1.0f) * k;
+            scale = baseS * puff;        // multiply around remembered size
+
+            if (_pulseTweenElapsed >= PulseTweenDuration)
+            {
+                position = _targetPos;
+                scale = baseS;           // restore exact base
+                _pulseTweenActive = false;
+                _pulseTweenElapsed = 0f;
+                _timeUntilNextPulse = PulseMoveInterval;
+            }
+        }
+        else
+        {
+            _timeUntilNextPulse -= dt;
+            if (_timeUntilNextPulse <= 0f)
+            {
+                float angle = (float)(_rng.NextDouble() * MathHelper.TwoPi);
+                float r = (float)System.Math.Sqrt(_rng.NextDouble()) * PulseMoveRadius;
+                Vector2 offset = new((float)System.Math.Cos(angle), (float)System.Math.Sin(angle));
+                offset *= r;
+
+                Vector2 candidate = ClampToRect(position + offset, PulseMoveBounds);
+
+                float dx = candidate.X - position.X;
+                effects = (dx > 0f) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+
+                _startPos = position;
+                _targetPos = candidate;
+                _pulseTweenElapsed = 0f;
+                _pulseTweenActive = true;
+            }
+        }
+    }
+
+    // ---------------------------
+    // MERGE CHECK
+    // ---------------------------
+    var collisions = CheckCollisions();
+    if (collisions != null)
+        MergeTo(collisions[0]);
+
+    // Single call so rectangles reflect final position/scale this frame
+    base.Update(gameTime);
+}
+
 
     // [ADDED] Small helper for bounds
     private static Vector2 ClampToRect(Vector2 p, Rectangle rect)
