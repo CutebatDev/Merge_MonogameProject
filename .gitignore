@@ -13,3 +13,6 @@ Merge_MonogameProject/obj/Merge_MonogameProject.csproj.nuget.dgspec.json
 Merge_MonogameProject/obj/project.assets.json
 Merge_MonogameProject/obj/project.nuget.cache
 .idea/.idea.Merge_MonogameProject/.idea/workspace.xml
+Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.dll
+Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.exe
+Merge_MonogameProject/bin/Debug/net8.0/Merge_MonogameProject.pdb

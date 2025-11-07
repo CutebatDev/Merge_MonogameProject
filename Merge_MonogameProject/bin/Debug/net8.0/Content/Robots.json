@@ -1,0 +1,6 @@
+[
+  { "level": 0, "spriteName": "Evolution_0", "clickReward": 1, "autoReward": 1, "periodSeconds": 3.0 },
+  { "level": 1, "spriteName": "Evolution_1", "clickReward": 2, "autoReward": 2, "periodSeconds": 5.0 },
+  { "level": 2, "spriteName": "Evolution_2", "clickReward": 4, "autoReward": 4, "periodSeconds": 8.0 },
+  { "level": 3, "spriteName": "Evolution_4", "clickReward": 8, "autoReward": 8, "periodSeconds": 12.0 }
+]
