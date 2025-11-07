@@ -1,9 +1,5 @@
-﻿using System.Diagnostics;
-using System.Numerics;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Vector2 = Microsoft.Xna.Framework.Vector2;
 
 namespace Merge_MonogameProject;
 

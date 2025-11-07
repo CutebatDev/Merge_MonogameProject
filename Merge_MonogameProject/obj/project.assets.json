@@ -300,29 +300,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nathk\\.nuget\\packages\\": {},
+    "C:\\Users\\alexa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nathk\\OneDrive\\Área de Trabalho\\Tiltan\\MonoGame\\MongameSummer2025\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
+      "projectUniqueName": "D:\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
       "projectName": "Merge_MonogameProject",
-      "projectPath": "C:\\Users\\nathk\\OneDrive\\Área de Trabalho\\Tiltan\\MonoGame\\MongameSummer2025\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
-      "packagesPath": "C:\\Users\\nathk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nathk\\OneDrive\\Área de Trabalho\\Tiltan\\MonoGame\\MongameSummer2025\\Merge_MonogameProject\\Merge_MonogameProject\\obj\\",
+      "projectPath": "D:\\Merge_MonogameProject\\Merge_MonogameProject\\Merge_MonogameProject.csproj",
+      "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
+      "outputPath": "D:\\Merge_MonogameProject\\Merge_MonogameProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\nathk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -367,30 +369,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.19, 8.0.19]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
