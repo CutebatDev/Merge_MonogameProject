@@ -12,7 +12,7 @@ namespace Merge_MonogameProject;
 // This MergeObject is a draggable merge-piece
 // Implements IUpdateable so MonoGame/Game loop will call Update each frame.
 // Goal right now: minimal interaction loop -> drag with mouse, drop, if overlapping same-level sibling -> merge (consume other, level++)
-public class MergeObject : Collider, IUpdateable
+public class MergeObject : Collider
 {
     // current evolution tier for this piece
     public int level = 0;
@@ -56,9 +56,6 @@ public class MergeObject : Collider, IUpdateable
 
     private void TriggerPop(float amp = 0.08f, float dur = 0.12f)
     {
-        if (_popTime <= 0f)
-            _baseScale = scale;
-
         _popAmp = amp;
         _popDur = dur;
         _popTime = dur;
