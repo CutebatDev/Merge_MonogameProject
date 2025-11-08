@@ -16,7 +16,7 @@ public class MergeObject : Collider
 {
     // current evolution tier for this piece
     public int level = 0;
-    private static MouseState _prevMouse;
+    private MouseState _prevMouse;
 
     // Pop animation state
     private Vector2 _baseScale = Vector2.One;
@@ -210,7 +210,7 @@ public class MergeObject : Collider
         if (rightJustPressed && DestRectangle.Contains(currentMouse.Position))
         {
             int lvl = (robotTag != null) ? robotTag.Level : level;
-            EconomyManager.Instance.AwardClick(lvl);
+            EconomyManager.Instance.AwardClick(lvl, Mouse.GetState().Position.ToVector2());
             TriggerPop(0.08f, 0.12f);
         }
     }

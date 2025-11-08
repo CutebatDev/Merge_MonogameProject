@@ -98,7 +98,7 @@ public class Game1 : Game
 
         // [NOTE] Your Sprite doesn’t expose sort/layer fields.
         // Draw order is guaranteed here because we created the background FIRST.
-
+        
         _backgroundSprite = background;
         // Load evolution data (reads Content/Robots.json from disk)
         RobotEvolutions.LoadFromFile(Path.Combine(Content.RootDirectory, "Robots.json"));
@@ -113,6 +113,7 @@ public class Game1 : Game
         _gearUI.Load(Content);
         _gearUI.SetTotal(_gears);
 
+        EconomyManager.FloatingTextFont = Content.Load<SpriteFont>("UIfont");
     }
 
     protected override void Update(GameTime gameTime)
