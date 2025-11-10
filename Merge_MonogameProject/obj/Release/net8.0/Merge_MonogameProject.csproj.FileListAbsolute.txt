@@ -80,3 +80,6 @@ D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Fonts\
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Robots.json
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Scenario.xnb
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\UIFont.xnb
+D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Audio\clank.xnb
+D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Audio\Music.ogg
+D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Audio\Music.xnb

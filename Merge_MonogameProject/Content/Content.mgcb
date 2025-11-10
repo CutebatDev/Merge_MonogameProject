@@ -13,6 +13,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Audio/clank.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/clank.wav
+
+#begin Audio/good-night-lofi-cozy-chill-music-160166.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Audio/good-night-lofi-cozy-chill-music-160166.mp3;Audio/Music.mp3
+
 #begin CreateIcon.png
 /importer:TextureImporter
 /processor:TextureProcessor

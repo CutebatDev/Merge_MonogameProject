@@ -3,6 +3,8 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+
 //for Path.Combine
 using System.IO;
 
@@ -24,6 +26,8 @@ public class Game1 : Game
     public static float ScreenCenterWidth;
     public static float ScreenCenterHeight;
 
+    private SoundManager soundManager;
+    
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -114,6 +118,8 @@ public class Game1 : Game
         _gearUI.SetTotal(_gears);
 
         EconomyManager.FloatingTextFont = Content.Load<SpriteFont>("UIfont");
+
+        SoundManager.Instance.LoadSounds(Content);
     }
 
     protected override void Update(GameTime gameTime)

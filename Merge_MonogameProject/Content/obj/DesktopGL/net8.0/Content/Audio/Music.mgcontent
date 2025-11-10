@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>D:/Merge_MonogameProject/Merge_MonogameProject/Content/Audio/good-night-lofi-cozy-chill-music-160166.mp3</SourceFile>
+  <SourceTime>2025-11-10T16:14:03.400686+02:00</SourceTime>
+  <DestFile>D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Audio/Music.xnb</DestFile>
+  <DestTime>2025-11-10T20:10:00.5478328+02:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2025-06-02T13:31:02+03:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2025-06-02T13:31:02+03:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Audio/Music.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

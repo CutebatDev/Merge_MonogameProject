@@ -1,4 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"D:/Merge_MonogameProject/Merge_MonogameProject/Content/Audio/clank.wav","D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Audio/clank.xnb","SoundEffectProcessor","SoundEffectContent",43922,43983,0.1445456
+"D:/Merge_MonogameProject/Merge_MonogameProject/Content/Audio/good-night-lofi-cozy-chill-music-160166.mp3","D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Audio/Music.xnb","SongProcessor","SongContent",4707892,123,1.3652706
 "D:/Merge_MonogameProject/Merge_MonogameProject/Content/CreateIcon.png","D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/CreateIcon.xnb","TextureProcessor","Texture2DContent",8290,1052757,0.1447543
 "D:/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_0.png","D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Evolution_0.xnb","TextureProcessor","Texture2DContent",756102,2103649,0.1568978
 "D:/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_1.png","D:/Merge_MonogameProject/Merge_MonogameProject/Content/bin/DesktopGL/Content/Evolution_1.xnb","TextureProcessor","Texture2DContent",844255,2804385,0.0868703

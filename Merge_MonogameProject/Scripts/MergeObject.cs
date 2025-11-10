@@ -212,6 +212,7 @@ public class MergeObject : Collider
             int lvl = (robotTag != null) ? robotTag.Level : level;
             EconomyManager.Instance.AwardClick(lvl, Mouse.GetState().Position.ToVector2());
             TriggerPop(0.08f, 0.12f);
+            SoundManager.Instance.PlaySfx();
         }
     }
 
@@ -275,5 +276,6 @@ public class MergeObject : Collider
         // Remove the other piece
         SceneManager.Remove(other);
         mergeObjects.Remove(other);
+        SoundManager.Instance.PlaySfx();
     }
 }
