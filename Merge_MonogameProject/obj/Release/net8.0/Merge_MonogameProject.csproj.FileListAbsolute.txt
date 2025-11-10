@@ -83,3 +83,4 @@ D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\UIFont
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Audio\clank.xnb
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Audio\Music.ogg
 D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\Audio\Music.xnb
+D:\Merge_MonogameProject\Merge_MonogameProject\bin\Release\net8.0\Content\pixel.xnb

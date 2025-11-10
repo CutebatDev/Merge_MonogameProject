@@ -89,6 +89,7 @@ public class Game1 : Game
         SpriteManager.AddSprite("Evolution_2", "Evolution_2");
         SpriteManager.AddSprite("Evolution_4", "Evolution_4");
         SpriteManager.AddSprite("CreateIcon", "CreateIcon");
+        SpriteManager.AddSprite("pixel", "pixel");
 
         // --- BACKGROUND first so it stays behind everything else ---
         var background = SceneManager.Create<Sprite>();   // plain sprite, not a button
@@ -120,6 +121,9 @@ public class Game1 : Game
         EconomyManager.FloatingTextFont = Content.Load<SpriteFont>("UIfont");
 
         SoundManager.Instance.LoadSounds(Content);
+
+        MusicSlider slider = SceneManager.Create<MusicSlider>();
+        slider.SetPosition(new Vector2((float)(ScreenCenterWidth * 1.40), 50));
     }
 
     protected override void Update(GameTime gameTime)

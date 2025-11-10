@@ -11,12 +11,14 @@
     <File>D:/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_1.png</File>
     <File>D:/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_2.png</File>
     <File>D:/Merge_MonogameProject/Merge_MonogameProject/Content/Evolution_4.png</File>
+    <File>D:/Merge_MonogameProject/Merge_MonogameProject/Content/pixel.png</File>
     <File>D:/Merge_MonogameProject/Merge_MonogameProject/Content/Scenario.png</File>
     <File>D:/Merge_MonogameProject/Merge_MonogameProject/Content/UIFont.spritefont.spritefont</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
     <File>Audio/Music.mp3</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
