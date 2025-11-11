@@ -1,7 +1,7 @@
 //holds the player amount of gears
 public static class MoneyBank
 {
-    public static long Gears { get; private set; } = 0;
+    public static long Gears { get; private set; } = 10;
     public static void Add(long amount)
     {
         if (amount <= 0) return;
